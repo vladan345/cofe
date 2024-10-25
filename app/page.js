@@ -1,101 +1,124 @@
-import Image from "next/image";
+"use client";
+import { Canvas } from "@react-three/fiber";
+import Scene from "@/components/Scene";
+import { useState, useEffect } from "react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+   const [activeSection, setActiveSection] = useState(0);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+   useEffect(() => {
+      const sections = gsap.utils.toArray("section");
+
+      sections.forEach((section, index) => {
+         ScrollTrigger.create({
+            trigger: section,
+            start: "top center",
+            end: "bottom center",
+            onEnter: () => setActiveSection(index),
+            onEnterBack: () => setActiveSection(index),
+         });
+      });
+
+      return () => {
+         ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      };
+   }, []);
+
+   return (
+      <div className="bg-orange-900">
+         <div className="h-screen fixed top-0 left-0 w-full z-[1]">
+            <Canvas>
+               <Scene activeSection={activeSection} />
+            </Canvas>
+         </div>
+
+         <section className="h-[300vh] w-full relative z-[2]">
+            <div className="sticky h-screen w-full top-0 left-0 flex justify-around items-center">
+               <h1 className="text-[160px]">CO</h1>
+               <h1 className="text-[160px]">FE</h1>
+            </div>
+         </section>
+         <section className="h-[300vh] w-full flex items-center relative z-[2]">
+            <div className="h-screen w-full  flex items-center">
+               <div className="w-[700px] ml-[10%]">
+                  <h2 className="text-[68px] uppercase leading-[1] mb-[40px]">
+                     Best coffee ever
+                  </h2>
+                  <p className="text-[18px] max-w-[500px] mb-[40px]">
+                     Contrary to popular belief, Lorem Ipsum is not simply
+                     random text. It has roots in a piece of classical Latin
+                     literature from 45 BC, making it over 2000 years old.
+                     Richard McClintock, a Latin professor at Hampden-Sydney
+                     College in Virginia, looked up one of the more obscure
+                     Latin words, consectetur, from a Lorem Ipsum passage, and
+                     going through the cites of the word in classical
+                     literature, discovered the undoubtable source. Lorem Ipsum
+                     comes from sections 1.10.32 and 1.10.33 of "de Finibus
+                     Bonorum et Malorum" (The Extremes of Good and Evil) by
+                     Cicero, written in 45 BC. This book is a treatise on the
+                     theory of ethics, very popular during the Renaissance. The
+                     first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..",
+                     comes from a line in section 1.10.32.
+                  </p>
+                  <p className="text-[18px] max-w-[500px]">
+                     Contrary to popular belief, Lorem Ipsum is not simply
+                     random text. It has roots in a piece of classical Latin
+                     literature from 45 BC, making it over 2000 years old.
+                     Richard McClintock, a Latin professor at Hampden-Sydney
+                     College in Virginia, looked up one of the more obscure
+                     Latin words, consectetur, from a Lorem Ipsum passage, and
+                     going through the cites of the word in classical
+                     literature, discovered the undoubtable source. Lorem Ipsum
+                     comes from sections 1.10.32 and 1.10.33 of "de Finibus
+                     Bonorum et Malorum" (The Extremes of Good and Evil) by
+                     Cicero, written in 45 BC. This book is a treatise on the
+                     theory of ethics, very popular during the Renaissance. The
+                     first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..",
+                     comes from a line in section 1.10.32.
+                  </p>
+               </div>
+            </div>
+         </section>
+         <section className="h-[300vh] w-full flex items-center relative z-[2]">
+            <div className="h-screen w-full flex justify-end items-center">
+               <div className="w-[400px] mr-[10%]">
+                  <h2 className="text-[140px] uppercase leading-[1] ">
+                     Best cofe ever
+                  </h2>
+                  <h2 className="text-[140px] uppercase leading-[1] ">
+                     Best cofe ever
+                  </h2>
+                  <h2 className="text-[140px] uppercase leading-[1] ">
+                     Best cofe ever
+                  </h2>
+                  <h2 className="text-[140px] uppercase leading-[1] ">
+                     Best cofe ever
+                  </h2>
+                  <h2 className="text-[140px] uppercase leading-[1] ">
+                     Best cofe ever
+                  </h2>
+                  <h2 className="text-[140px] uppercase leading-[1] ">
+                     Best cofe ever
+                  </h2>
+               </div>
+            </div>
+         </section>
+         <section className="h-[300vh] w-full relative z-[0] flex  items-center">
+            <div className="h-screen w-full top-0 left-0 flex flex-col justify-center items-center">
+               <h1 className="text-[460px] tracking-[60px]">COFE</h1>
+               <h1 className="text-[460px] tracking-[60px]">COFE</h1>
+            </div>
+         </section>
+         <section className="h-[300vh] w-full relative z-[2]">
+            <div className="sticky h-screen w-full top-0 left-0 flex justify-around items-center">
+               <h1 className="text-[160px]">CO</h1>
+               <h1 className="text-[160px]">FE</h1>
+            </div>
+         </section>
+      </div>
+   );
 }
