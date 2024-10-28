@@ -69,6 +69,16 @@ export default function Scene() {
             "<"
          );
       });
+
+      gsap.to("#section3", {
+         background: "black",
+         scrollTrigger: {
+            trigger: "#section3",
+            scrub: true,
+            start: "top top",
+            end: "bottom bottom",
+         },
+      });
    }, []);
 
    return (
