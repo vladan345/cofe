@@ -16,8 +16,8 @@ export default function Home() {
       sections.forEach((section, index) => {
          ScrollTrigger.create({
             trigger: section,
-            start: "top center",
-            end: "bottom center",
+            // start: "top center",
+            // end: "bottom center",
             onEnter: () => setActiveSection(index),
             onEnterBack: () => setActiveSection(index),
          });
@@ -29,7 +29,7 @@ export default function Home() {
    }, []);
 
    return (
-      <div className="bg-orange-900">
+      <div className="bg-orange-900 content">
          <div className="h-screen fixed top-0 left-0 w-full z-[1]">
             <Canvas>
                <Scene activeSection={activeSection} />
@@ -38,8 +38,8 @@ export default function Home() {
 
          <section className="h-[300vh] w-full relative z-[2]">
             <div className="sticky h-screen w-full top-0 left-0 flex justify-around items-center">
-               <h1 className="text-[160px]">CO</h1>
-               <h1 className="text-[160px]">FE</h1>
+               <h1 className="md:text-[160px] text-[30vw]">CO</h1>
+               <h1 className="md:text-[160px] text-[30vw]">FE</h1>
             </div>
          </section>
          <section className="h-[300vh] w-full flex items-center relative z-[2]">
@@ -86,22 +86,22 @@ export default function Home() {
          <section className="h-[300vh] w-full flex items-center relative z-[2]">
             <div className="h-screen w-full flex justify-end items-center">
                <div className="w-[400px] mr-[10%]">
-                  <h2 className="text-[140px] uppercase leading-[1] ">
+                  <h2 className="text-[20vw] md:text-[140px] uppercase leading-[1] ">
                      Best cofe ever
                   </h2>
-                  <h2 className="text-[140px] uppercase leading-[1] ">
+                  <h2 className="text-[20vw] md:text-[140px] uppercase leading-[1] ">
                      Best cofe ever
                   </h2>
-                  <h2 className="text-[140px] uppercase leading-[1] ">
+                  <h2 className="text-[20vw] md:text-[140px] uppercase leading-[1] ">
                      Best cofe ever
                   </h2>
-                  <h2 className="text-[140px] uppercase leading-[1] ">
+                  <h2 className="text-[20vw] md:text-[140px] uppercase leading-[1] ">
                      Best cofe ever
                   </h2>
-                  <h2 className="text-[140px] uppercase leading-[1] ">
+                  <h2 className="text-[20vw] md:text-[140px] uppercase leading-[1] ">
                      Best cofe ever
                   </h2>
-                  <h2 className="text-[140px] uppercase leading-[1] ">
+                  <h2 className="text-[20vw] md:text-[140px] uppercase leading-[1] ">
                      Best cofe ever
                   </h2>
                </div>
@@ -109,14 +109,14 @@ export default function Home() {
          </section>
          <section className="h-[300vh] w-full relative z-[0] flex  items-center">
             <div className="h-screen w-full top-0 left-0 flex flex-col justify-center items-center">
-               <h1 className="text-[460px] tracking-[60px]">COFE</h1>
-               <h1 className="text-[460px] tracking-[60px]">COFE</h1>
+               <h1 className="text-[25vw] tracking-[3vw]">COFE</h1>
+               <h1 className="text-[25vw] tracking-[3vw]">COFE</h1>
             </div>
          </section>
          <section className="h-[300vh] w-full relative z-[2]">
             <div className="sticky h-screen w-full top-0 left-0 flex justify-around items-center">
-               <h1 className="text-[160px]">CO</h1>
-               <h1 className="text-[160px]">FE</h1>
+               <h1 className="md:text-[160px] text-[30vw]">CO</h1>
+               <h1 className="md:text-[160px] text-[30vw]">FE</h1>
             </div>
          </section>
       </div>

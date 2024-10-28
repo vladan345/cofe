@@ -5,13 +5,11 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Scene({ activeSection }) {
+export default function Scene() {
    const { nodes, materials } = useGLTF("/coffee.glb");
    const cup = useRef();
-   useEffect(() => {
-      const tl = gsap.timeline();
 
-      // Define different camera positions and colors for each section
+   useEffect(() => {
       const positions = [
          { x: 0, y: 0, z: 0 },
          { x: 0.5, y: 0, z: 0 },
@@ -34,32 +32,44 @@ export default function Scene({ activeSection }) {
          { x: 1, y: 1, z: 1 },
       ];
 
-      // Camera position animation
-      tl.to(cup.current.position, {
-         ...positions[activeSection],
-         ease: "power4.inOut",
-         duration: 3,
+      const tl = gsap.timeline({
+         scrollTrigger: {
+            trigger: ".content",
+            start: "top top",
+            end: "bottom bottom",
+            scrub: true,
+         },
       });
-      tl.to(
-         cup.current.rotation,
-         {
-            ...rotations[activeSection],
-            ease: "power4.inOut",
 
-            duration: 2,
-         },
-         "<"
-      );
-      tl.to(
-         cup.current.scale,
-         {
-            ...scales[activeSection],
-            ease: "power4.inOut",
-            duration: 2,
-         },
-         "<"
-      );
-   }, [activeSection]);
+      positions.forEach((pos, index) => {
+         tl.to(cup.current.position, {
+            x: pos.x,
+            y: pos.y,
+            z: pos.z,
+            ease: "power2.inOut",
+         });
+         tl.to(
+            cup.current.rotation,
+            {
+               x: rotations[index].x,
+               y: rotations[index].y,
+               z: rotations[index].z,
+               ease: "power2.inOut",
+            },
+            "<"
+         );
+         tl.to(
+            cup.current.scale,
+            {
+               x: scales[index].x,
+               y: scales[index].y,
+               z: scales[index].z,
+               ease: "power2.inOut",
+            },
+            "<"
+         );
+      });
+   }, []);
 
    return (
       <>
@@ -71,7 +81,6 @@ export default function Scene({ activeSection }) {
                fov={22.895}
                position={[-0.02, 0.42, 3.039]}
             />
-
             <mesh
                ref={cup}
                castShadow
@@ -80,7 +89,7 @@ export default function Scene({ activeSection }) {
                material={materials.Material}
             />
             {Object.keys(nodes).map((name, index) => {
-               if (nodes[name].type == "Object3D") {
+               if (nodes[name].type === "Object3D") {
                   return (
                      <directionalLight
                         key={index}
