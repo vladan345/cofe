@@ -4,7 +4,7 @@ import Scene from "@/components/Scene";
 import { useState, useEffect } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-
+import { SoftShadows } from "@react-three/drei";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
@@ -31,18 +31,19 @@ export default function Home() {
    return (
       <div className="bg-orange-900 content">
          <div className="h-screen fixed top-0 left-0 w-full z-[1]">
-            <Canvas>
+            <Canvas shadows>
                <Scene activeSection={activeSection} />
+               {/* <SoftShadows size={50} samples={20} /> */}
             </Canvas>
          </div>
 
-         <section className="h-[300vh] w-full relative z-[2]">
+         <section className="h-[200vh] w-full relative z-[2]">
             <div className="sticky h-screen w-full top-0 left-0 flex justify-around items-center">
                <h1 className="md:text-[160px] text-[30vw]">CO</h1>
                <h1 className="md:text-[160px] text-[30vw]">FE</h1>
             </div>
          </section>
-         <section className="h-[300vh] w-full flex items-center relative z-[2]">
+         <section className="h-[200vh] w-full flex items-center relative z-[2]">
             <div className="h-screen w-full  flex items-center">
                <div className="w-[700px] ml-[10%]">
                   <h2 className="text-[68px] uppercase leading-[1] mb-[40px]">
@@ -84,7 +85,7 @@ export default function Home() {
             </div>
          </section>
          <section
-            className="h-[300vh] w-full flex items-center relative z-[2]"
+            className="h-[200vh] w-full flex items-center relative z-[2]"
             id="section3"
          >
             <div className="h-screen w-full flex justify-end items-center">
@@ -110,13 +111,19 @@ export default function Home() {
                </div>
             </div>
          </section>
-         <section className="h-[300vh] bg-black w-full relative z-[0] flex  items-center">
+         <section className="h-[200vh] w-full relative z-[0] flex items-center">
             <div className="h-screen w-full top-0 left-0 flex flex-col justify-center items-center">
                <h1 className="text-[25vw] tracking-[3vw]">COFE</h1>
                <h1 className="text-[25vw] tracking-[3vw]">COFE</h1>
             </div>
          </section>
-         <section className="h-[300vh] w-full relative z-[2]">
+         <section className="h-[200vh] w-full relative z-[2]">
+            <div className="sticky h-screen w-full top-0 left-0 flex justify-around items-center">
+               <h1 className="md:text-[160px] text-[30vw]">CO</h1>
+               <h1 className="md:text-[160px] text-[30vw]">FE</h1>
+            </div>
+         </section>
+         <section id="section6" className="h-[200vh] w-full relative z-[2]">
             <div className="sticky h-screen w-full top-0 left-0 flex justify-around items-center">
                <h1 className="md:text-[160px] text-[30vw]">CO</h1>
                <h1 className="md:text-[160px] text-[30vw]">FE</h1>
