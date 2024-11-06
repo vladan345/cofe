@@ -1,10 +1,12 @@
 "use client";
 import { Canvas } from "@react-three/fiber";
 import Scene from "@/components/Scene";
+import { Beans } from "@/components/Beans";
 import { useState, useEffect } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { SoftShadows } from "@react-three/drei";
+import Section1 from "./sections/Section1";
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
@@ -29,20 +31,39 @@ export default function Home() {
    }, []);
 
    return (
-      <div className="bg-orange-900 content">
+      <div className="bg-[#b68c49] content">
          <div className="h-screen fixed top-0 left-0 w-full z-[1]">
             <Canvas shadows>
+               <fog attach="fog" color="#b68c49" near={10} far={15} />
                <Scene activeSection={activeSection} />
-               {/* <SoftShadows size={50} samples={20} /> */}
+               <Beans
+                  count={30}
+                  radius={5}
+                  xScale={1}
+                  yScale={0.7}
+                  zScale={1}
+                  texture={0}
+               />
+               <Beans
+                  count={10}
+                  radius={5}
+                  xScale={1}
+                  yScale={0.7}
+                  zScale={1}
+                  texture={1}
+               />
+               <Beans
+                  count={20}
+                  radius={5}
+                  xScale={1}
+                  yScale={0.7}
+                  zScale={1}
+                  texture={2}
+               />
             </Canvas>
          </div>
 
-         <section className="h-[200vh] w-full relative z-[2]">
-            <div className="sticky h-screen w-full top-0 left-0 flex justify-around items-center">
-               <h1 className="md:text-[160px] text-[30vw]">CO</h1>
-               <h1 className="md:text-[160px] text-[30vw]">FE</h1>
-            </div>
-         </section>
+         <Section1 />
          <section className="h-[200vh] w-full flex items-center relative z-[2]">
             <div className="h-screen w-full  flex items-center">
                <div className="w-[700px] ml-[10%]">

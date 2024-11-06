@@ -28,3 +28,8 @@ body {
       text-wrap: balance;
    }
 }
+
+.cover {
+   --clip: 100%;
+   clip-path: inset(0 0 var(--clip) 0);
+}
