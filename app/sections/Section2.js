@@ -25,7 +25,7 @@ export default function Section2() {
     { scope: main },
   );
   return (
-    <section ref={main} className="relative z-[2] w-full">
+    <section ref={main} className="relative z-[2] w-full overflow-x-hidden">
       <div className="trigger flex h-screen w-[500%] flex-nowrap">
         {/* <div className="absolute left-0 top-0 h-full w-full bg-green-200 opacity-20"></div> */}
         <div className="panel spacer w-full"></div>

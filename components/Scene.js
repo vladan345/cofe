@@ -179,12 +179,19 @@ export default function Scene() {
                 position={nodes[name].position}
                 rotation={nodes[name].rotation}
                 intensity={0.5 * index}
-                decay={5}
                 castShadow
               />
             );
           }
         })}
+        {/* <pointLight
+          position={[1, 0, 5]}
+          rotation={[Math.PI * 0.5, 0, 0]}
+          intensity={20}
+          decay={2}
+          distance={6}
+          castShadow
+        /> */}
         <ambientLight intensity={1.5} />
       </group>
     </>
