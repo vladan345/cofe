@@ -1,22 +1,23 @@
 import React, { useRef, useMemo, useEffect } from "react";
-import * as THREE from "three";
 import gsap from "gsap";
 import { useTexture } from "@react-three/drei";
 
 export function Beans({
-   count = 100,
-   radius = 5,
-   xScale = 1,
-   yScale = 0.7,
-   zScale = 1,
+   count = 50,
+   ringRadius = 2, // Major radius: distance from center to center of tube
+   tubeRadius = 2, // Minor radius: radius of the tube forming the torus
+   positionZ = -10,
    texture,
+   direction = "left",
+   size = 1,
+   speed = 100,
 }) {
    const mesh = useRef();
 
    // Load three textures using `useTexture`
-   const textures = useTexture(["/cofi1.png", "/cofi2.png", "/cofi3.png"]);
+   const textures = useTexture(["/cofi1b.png", "/cofi2.png", "/cofi3b.png"]);
 
-   // GSAP animations for scaling and rotation
+   // GSAP animations for rotation and position
    useEffect(() => {
       if (mesh.current) {
          gsap.from(mesh.current?.scale, {
@@ -27,8 +28,8 @@ export function Beans({
             ease: "power2.inOut",
          });
          gsap.to(mesh.current?.rotation, {
-            y: Math.PI * 2,
-            duration: 100,
+            y: direction == "left" ? -Math.PI * 2 : Math.PI * 2,
+            duration: speed,
             repeat: -1,
             ease: "linear",
          });
@@ -46,25 +47,20 @@ export function Beans({
       }
    }, []);
 
-   // Generate particles' positions and randomly assign each a texture index
+   // Generate particles' positions in a torus shape and randomly assign each a texture index
    const particles = useMemo(() => {
       const positions = [];
       const textureIndices = [];
 
       for (let i = 0; i < count; i++) {
-         // Generate random position within a sphere
-         const phi = Math.acos(2 * Math.random() - 1);
-         const theta = 2 * Math.PI * Math.random();
-         const distance = radius * Math.cbrt(Math.random()); // cbrt for uniform distribution
+         // Generate random angles for torus shape
+         const u = Math.random() * 2 * Math.PI; // Angle around the ring
+         const v = Math.random() * 2 * Math.PI; // Angle around the tube
 
-         let x = distance * Math.sin(phi) * Math.cos(theta);
-         let y = distance * Math.sin(phi) * Math.sin(theta);
-         let z = distance * Math.cos(phi);
-
-         // Apply scale factors to create an elliptical effect
-         x *= xScale; // Stretch or squish along the x-axis
-         y *= yScale; // Stretch or squish along the y-axis
-         z *= zScale; // Stretch or squish along the z-axis
+         // Calculate x, y, z coordinates based on torus geometry
+         const x = (ringRadius + tubeRadius * Math.cos(v)) * Math.cos(u);
+         const y = tubeRadius * Math.sin(v);
+         const z = (ringRadius + tubeRadius * Math.cos(v)) * Math.sin(u);
 
          positions.push(x, y, z);
 
@@ -76,10 +72,10 @@ export function Beans({
          positions: new Float32Array(positions),
          textureIndices: new Float32Array(textureIndices),
       };
-   }, [count, radius, xScale, yScale, zScale]);
+   }, [count, ringRadius, tubeRadius]);
 
    return (
-      <group ref={mesh} position={[0, 0, -6]}>
+      <group ref={mesh} position={[0, 0, positionZ]}>
          <points>
             <bufferGeometry>
                <bufferAttribute
@@ -89,12 +85,11 @@ export function Beans({
                   itemSize={3}
                />
             </bufferGeometry>
-            {/* Use a single material, but we'll apply the right texture via pointsMaterial */}
             <pointsMaterial
-               size={1}
+               size={size}
                transparent
-               depthWrite={false}
-               depthTest={true}
+               depthWrite={true}
+               alphaTest={0.1}
                vertexColors={false}
                map={textures[texture]} // Default texture
             />
