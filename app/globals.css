@@ -41,7 +41,26 @@ body {
   height: 100%;
   margin: 0 auto;
 }
+.text-stroke {
+  -webkit-text-stroke: 1px white;
+}
+.coffeeText1 .char,
+.coffeeText2 .char,
+.coffeeText3 .char {
+  clip-path: polygon(0% 0%, 0% 0%, 100% 0%, 100% 0%);
+}
 
+.coffeeText1,
+.coffeeText2,
+.coffeeText3 {
+  width: 100%;
+}
+.coffeeText1 .line,
+.coffeeText2 .line,
+.coffeeText3 .line {
+  display: flex !important;
+  justify-content: center;
+}
 @layer utilities {
   .text-balance {
     text-wrap: balance;

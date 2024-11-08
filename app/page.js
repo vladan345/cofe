@@ -21,8 +21,9 @@ export default function Home() {
       <Section1 />
       <section className="transitionSection relative z-[3] h-[200vh]"></section>
       <Section2 />
-      <section className="transitionSection relative z-[3] h-[200vh]"></section>
+
       <Section3 />
+      <section className="transitionSection relative z-[3] h-[200vh]"></section>
       <section className="transitionSection relative z-[3] h-[200vh]"></section>
       <Section4 />
 

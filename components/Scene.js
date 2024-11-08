@@ -30,6 +30,11 @@ export default function Scene() {
       scale: { x: 1.2, y: 1.2, z: 1.2 },
     },
     {
+      position: { x: 0.5, y: 0.4, z: 0 }, // Section 2 on hold
+      rotation: { x: -Math.PI / 10, y: -Math.PI / 6, z: 0 },
+      scale: { x: 1.2, y: 1.2, z: 1.2 },
+    },
+    {
       position: { x: -0.5, y: 0.7, z: 0 }, // position left large
       rotation: { x: 0, y: 0.1, z: 0 },
       scale: { x: 2.2, y: 2.2, z: 2.2 },
@@ -43,6 +48,16 @@ export default function Scene() {
       position: { x: 0, y: -0.4, z: 0 }, // position bottom peek
       rotation: { x: 0, y: Math.PI * 2, z: 0 },
       scale: { x: 1.5, y: 1.5, z: 1.5 },
+    },
+    {
+      position: { x: 0, y: 0.4, z: 2.5 }, // position top view
+      rotation: { x: Math.PI / 2, y: 0, z: 0 },
+      scale: { x: 1, y: 1, z: 1 },
+    },
+    {
+      position: { x: 0, y: 0.4, z: 2.5 }, // position top view
+      rotation: { x: Math.PI / 2, y: 0, z: 0 },
+      scale: { x: 1, y: 1, z: 1 },
     },
     {
       position: { x: 0, y: 0.4, z: 2.5 }, // position top view

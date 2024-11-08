@@ -49,7 +49,7 @@ export default function Section3() {
     >
       <div className="trigger relative h-full w-full">
         <div className="pointsWrap sticky left-0 top-0 flex h-screen w-full justify-end">
-          <div className="points flex w-[calc(50%+15px)] flex-col justify-around">
+          <div className="points flex w-[calc(50%+30px)] flex-col justify-around">
             <div className="point ml-[37px] flex items-center gap-[20px] opacity-0">
               <div className="h-[20px] w-[20px] rounded-full bg-white outline outline-[2px] outline-offset-4"></div>
               <div className="h-[3px] w-[100px] bg-white"></div>
