@@ -7,7 +7,7 @@ import { useFrame, useThree } from "@react-three/fiber";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Scene() {
-  const { nodes, materials } = useGLTF("/coffee3.glb");
+  const { nodes, materials } = useGLTF("/coffee5.glb");
   const cup = useRef();
   const cupWrap = useRef();
   const plain = useRef();
@@ -152,7 +152,7 @@ export default function Scene() {
           far={100}
           near={0.1}
           fov={22.895}
-          position={[-0.02, 0.42, 3.039]}
+          position={[0, 0.42, 3.039]}
         />
         <mesh
           ref={plain}
@@ -192,10 +192,10 @@ export default function Scene() {
           distance={6}
           castShadow
         /> */}
-        <ambientLight intensity={1.5} />
+        <ambientLight intensity={2} />
       </group>
     </>
   );
 }
 
-useGLTF.preload("/coffee.glb");
+useGLTF.preload("/coffee5.glb");

@@ -11,6 +11,7 @@ export default function Section2() {
     () => {
       const panels = gsap.utils.toArray(".panel");
 
+      // Main horizontal scroll animation
       gsap.to(panels, {
         xPercent: -100 * (panels.length - 1),
         ease: "none",
@@ -32,7 +33,7 @@ export default function Section2() {
 
         <div className="panel w-full">
           <div className="container flex items-center">
-            <div className="max-w-[40vw] gap-[20px]">
+            <div className="text-container max-w-[40vw] gap-[20px]">
               <div className="flex items-start leading-[1]">
                 <span className="text-[12vw] font-bold leading-[0.8]">01</span>
                 <div>
@@ -52,7 +53,7 @@ export default function Section2() {
         </div>
         <div className="panel w-full">
           <div className="container flex items-center">
-            <div className="max-w-[45vw]">
+            <div className="text-container max-w-[45vw]">
               <div className="flex items-start gap-[20px] leading-[1]">
                 <span className="text-[12vw] font-bold leading-[0.8]">02</span>
                 <div>
@@ -71,7 +72,7 @@ export default function Section2() {
         </div>
         <div className="panel w-full">
           <div className="container flex items-center">
-            <div className="max-w-[40vw]">
+            <div className="text-container max-w-[40vw]">
               <div className="flex items-start gap-[20px] leading-[1]">
                 <span className="text-[12vw] font-bold leading-[0.8]">03</span>
                 <div>

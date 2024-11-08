@@ -2,12 +2,12 @@ import { Canvas } from "@react-three/fiber";
 import Scene from "@/components/Scene";
 import { Beans } from "@/components/Beans";
 
-export default function Experience({ activeSection, backgroundColor }) {
+export default function Experience({ backgroundColor }) {
   return (
     <div className="experience fixed left-0 top-0 z-[1] h-screen w-full">
       <Canvas shadows>
         <fog attach="fog" color={backgroundColor} near={3} far={15} />
-        <Scene activeSection={activeSection} />
+        <Scene />
         <Beans
           count={100}
           ringRadius={6}
