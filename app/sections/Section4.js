@@ -57,6 +57,16 @@ export default function Section4() {
         },
         stagger: 0.05,
       });
+      gsap.to(".sticky h1", {
+        scale: 1,
+        scrollTrigger: {
+          trigger: ".trigger",
+          start: "top top",
+          end: "bottom top",
+          scrub: true,
+          toggleActions: "play none none reverse",
+        },
+      });
     },
     { scope: main },
   );
@@ -68,10 +78,10 @@ export default function Section4() {
     >
       <div className="trigger h-full w-full">
         <div className="sticky left-0 top-0 flex h-screen w-full flex-col items-center justify-center">
-          <h1 className="coffeeText1 absolute left-1/2 top-1/2 z-[0] -translate-x-1/2 -translate-y-1/2 text-[20vw] font-bold tracking-widest blur-[20px]">
+          <h1 className="coffeeText1 absolute left-1/2 top-1/2 z-[0] -translate-x-1/2 -translate-y-1/2 scale-[0.8] text-[20vw] font-bold tracking-widest blur-[20px]">
             COFFEE
           </h1>
-          <h1 className="coffeeText2 absolute left-1/2 top-1/2 z-[0] -translate-x-1/2 -translate-y-1/2 text-[20vw] font-bold tracking-widest">
+          <h1 className="coffeeText2 absolute left-1/2 top-1/2 z-[0] -translate-x-1/2 -translate-y-1/2 scale-[0.8] text-[20vw] font-bold tracking-widest">
             COFFEE
           </h1>
 
@@ -82,7 +92,7 @@ export default function Section4() {
             height={1560}
             className="cup absolute left-1/2 top-[100%] z-[1] max-w-[600px] -translate-x-1/2"
           />
-          <h1 className="coffeeText3 text-stroke absolute left-1/2 top-1/2 z-[2] -translate-x-1/2 -translate-y-1/2 text-center text-[20vw] font-bold tracking-widest text-transparent">
+          <h1 className="coffeeText3 text-stroke absolute left-1/2 top-1/2 z-[2] -translate-x-1/2 -translate-y-1/2 scale-[0.8] text-center text-[20vw] font-bold tracking-widest text-transparent">
             COFFEE
           </h1>
         </div>

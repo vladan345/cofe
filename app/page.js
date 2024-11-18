@@ -14,9 +14,21 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Home() {
   const backgroundColor = "#83d0fc";
   // Section handling for cup animation
+  useEffect(() => {
+    gsap.to(".bar", {
+      height: "calc(100% - 20px)",
+      scrollTrigger: {
+        trigger: ".content",
+        scrub: true,
+        start: "top top",
+        end: "bottom bottom",
+      },
+    });
+  }, []);
 
   return (
     <main className="content" style={{ backgroundColor }}>
+      <div className="bar fixed right-[10px] top-[10px] z-[10] h-0 w-[13px] rounded-full bg-blue-400"></div>
       <Experience backgroundColor={backgroundColor} />
       <Section1 />
       <section className="transitionSection relative z-[3] h-[200vh]"></section>

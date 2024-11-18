@@ -26,7 +26,7 @@ export default function Section3() {
         scrollTrigger: {
           trigger: ".trigger",
           scrub: true,
-          start: `top top`,
+          start: `20% top`,
           end: "80% top",
         },
       });

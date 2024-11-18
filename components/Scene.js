@@ -134,26 +134,26 @@ export default function Scene() {
         x: -0.3,
         y: pointer.x * 0.5 - 0.3,
         z: -0.2,
-        duration: 2,
+        duration: 1,
       });
       gsap.to(cupWrap.current.position, {
         x: pointer.x * 0.1,
         y: pointer.y * 0.1,
         z: 0,
-        duration: 2,
+        duration: 1,
       });
     } else {
       gsap.to(cupWrap.current.rotation, {
         x: 0,
         y: 0,
         z: 0,
-        duration: 2,
+        duration: 1,
       });
       gsap.to(cupWrap.current.position, {
         x: 0,
         y: 0,
         z: 0,
-        duration: 2,
+        duration: 1,
       });
     }
   });
