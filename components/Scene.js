@@ -7,10 +7,11 @@ import { useFrame, useThree } from "@react-three/fiber";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Scene() {
-  const { nodes, materials } = useGLTF("/coffee5.glb");
+  const { nodes, materials } = useGLTF("/coffee.glb");
   const cup = useRef();
   const cupWrap = useRef();
   const plain = useRef();
+  const lightRef = useRef();
 
   const { pointer } = useThree();
   const transforms = [
@@ -173,9 +174,10 @@ export default function Scene() {
           ref={plain}
           receiveShadow
           geometry={nodes.plane.geometry}
-          material={materials["Material.001"]}
-          position={[0, -3, 0]}
-        />
+          position={[0, -3, -2]}
+        >
+          <meshStandardMaterial color="#61352b" />
+        </mesh>
         <group ref={cupWrap} rotation={[-0.3, -0.4, -0.2]}>
           <mesh
             ref={cup}
@@ -185,6 +187,15 @@ export default function Scene() {
             position={[0, 0.4, 0]}
           />
         </group>
+
+        <pointLight
+          ref={lightRef}
+          color={"white"}
+          distance={0}
+          intensity={10}
+          decay={1}
+          position={[0, 0, -12]}
+        />
 
         {Object.keys(nodes).map((name, index) => {
           if (nodes[name].type === "Object3D") {
@@ -213,4 +224,4 @@ export default function Scene() {
   );
 }
 
-useGLTF.preload("/coffee5.glb");
+useGLTF.preload("/coffee.glb");

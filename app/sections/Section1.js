@@ -42,8 +42,11 @@ export default function Section1() {
     <section className="pointer-events-none" ref={main}>
       <div className="trigger relative z-[1] h-[500vh] w-full">
         <div className="sticky left-0 top-0 flex h-screen w-full items-center justify-around">
-          <div className="textWrap relative h-[calc(20vw*1.5)]">
-            <h1 className="cover text-[20vw] font-bold tracking-widest">
+          <div className="textWrap relative flex h-[calc(20vw*1.5)] flex-col items-center justify-center">
+            <h1 className="cover font-crimson text-center text-[6vw] leading-[1.2]">
+              Straight to the Good Stuff:
+            </h1>
+            <h1 className="cover text-[20vw] font-bold leading-[0.9] tracking-[0.05em]">
               COFFEE
             </h1>
           </div>

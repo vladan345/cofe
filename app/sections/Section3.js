@@ -49,26 +49,26 @@ export default function Section3() {
     >
       <div className="trigger relative h-full w-full">
         <div className="pointsWrap sticky left-0 top-0 flex h-screen w-full justify-end">
-          <div className="points flex w-[calc(50%+30px)] flex-col justify-around">
-            <div className="point ml-[37px] flex items-center gap-[20px] opacity-0">
-              <div className="h-[20px] w-[20px] rounded-full bg-white outline outline-[2px] outline-offset-4"></div>
-              <div className="h-[3px] w-[100px] bg-white"></div>
-              <p className="max-w-[300px] text-[32px] leading-[1.2]">
-                Traditional Italian Coffee Rituals
+          <div className="points flex w-[calc(50%+30px)] flex-col justify-around md:justify-center md:gap-[160px]">
+            <div className="point ml-[37px] flex items-center gap-[20px] opacity-0 md:ml-[20px]">
+              <div className="min-h-[20px] min-w-[20px] rounded-full bg-white outline outline-[2px] outline-offset-4 outline-white"></div>
+              <div className="h-[3px] w-[100px] bg-white md:hidden"></div>
+              <p className="font-crimson max-w-[300px] text-[32px] leading-[1.2] text-white md:text-[20px]">
+                Coffee doesn't ask questions.
               </p>
             </div>
             <div className="point flex items-center gap-[20px] opacity-0">
-              <div className="h-[20px] w-[20px] rounded-full bg-white outline outline-[2px] outline-offset-4"></div>
-              <div className="h-[3px] w-[100px] bg-white"></div>
-              <p className="max-w-[300px] text-[32px] leading-[1.2]">
-                Specialty Coffee Blends
+              <div className="min-h-[20px] min-w-[20px] rounded-full bg-white outline outline-[2px] outline-offset-4 outline-white"></div>
+              <div className="h-[3px] w-[100px] bg-white md:hidden"></div>
+              <p className="font-crimson max-w-[300px] text-[32px] leading-[1.2] text-white md:text-[20px]">
+                Coffee understands.
               </p>
             </div>
-            <div className="point ml-[-40px] flex items-center gap-[20px] opacity-0">
-              <div className="h-[20px] w-[20px] rounded-full bg-white outline outline-[2px] outline-offset-4"></div>
-              <div className="h-[3px] w-[100px] bg-white"></div>
-              <p className="max-w-[300px] text-[32px] leading-[1.2]">
-                Popular Coffee Worldwide
+            <div className="point ml-[-40px] flex items-center gap-[20px] opacity-0 md:ml-[-20px]">
+              <div className="min-h-[20px] min-w-[20px] rounded-full bg-white outline outline-[2px] outline-offset-4 outline-white"></div>
+              <div className="h-[3px] w-[100px] bg-white md:hidden"></div>
+              <p className="font-crimson max-w-[300px] text-[32px] leading-[1.2] text-white md:text-[20px]">
+                Coffee just gets you.
               </p>
             </div>
           </div>

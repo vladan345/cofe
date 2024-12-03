@@ -4,7 +4,7 @@
 
 :root {
   --background: #171717;
-  --foreground: #ffffff;
+  --foreground: #9cd4e6;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -21,7 +21,6 @@ html {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
 }
 .gradient:after {
   display: block;
@@ -42,7 +41,7 @@ body {
   margin: 0 auto;
 }
 .text-stroke {
-  -webkit-text-stroke: 1px white;
+  -webkit-text-stroke: 1px #9cd4e6;
 }
 .coffeeText1 .char,
 .coffeeText2 .char,
@@ -55,12 +54,7 @@ body {
 .coffeeText3 {
   width: 100%;
 }
-.coffeeText1 .line,
-.coffeeText2 .line,
-.coffeeText3 .line {
-  display: flex !important;
-  justify-content: center;
-}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
