@@ -60,23 +60,23 @@ export default function Section2() {
           </div>
           <div className="panel absolute left-0 top-0 h-screen w-full">
             <div className="container flex items-center">
-              <div className="text-container max-w-[40vw] gap-[20px] pl-[2vw] md:max-w-[300px]">
+              <div className="text-container max-w-[40vw] gap-[20px] pl-[2vw] md:max-w-[320px]">
                 <div className="flex flex-col items-start leading-[0.9]">
                   <div className="flex border-b border-b-[#9cd4e6] pb-[1.5vw] md:pb-[10px]">
                     <span className="mx-[1vw] text-[10vw] font-extralight leading-[0.9] md:text-[60px]">
                       02
                     </span>
                     <h2 className="font-crimson text-[5vw] md:text-[30px]">
-                      The Art of Espresso
+                      Dark roast for brighter mornings.
                     </h2>
                   </div>
-                  <p className="font-crimson my-[20px] ml-[12vw] text-[2vw] leading-[1.2] text-white md:ml-0 md:text-[16px]">
-                    Discover how Italy became a world-renowned coffee hub.
+                  <p className="font-crimson my-[20px] ml-[13.5vw] text-[2vw] leading-[1.2] text-white md:ml-0 md:text-[16px]">
+                    Less noise, more flavor.
                   </p>
-                  <p className="ml-[12vw] text-[1vw] leading-[1.4] text-white md:ml-0 md:text-[14px]">
-                    Italy's love for coffee dates back centuries, making it a
-                    coffee epicenter. From the first sip of espresso to the
-                    last, Italy's coffee culture is unrivaled.
+                  <p className="ml-[13.5vw] text-[1vw] leading-[1.4] text-white md:ml-0 md:text-[14px]">
+                    Skip the bells and whistles. The rich, bold taste is all you
+                    need to kick-start your day. Strong, smooth, and
+                    unapologetic.
                   </p>
                 </div>
               </div>
@@ -84,23 +84,23 @@ export default function Section2() {
           </div>
           <div className="panel absolute left-0 top-0 h-screen w-full">
             <div className="container flex items-center">
-              <div className="text-container max-w-[40vw] gap-[20px] pl-[2vw] md:max-w-[300px]">
+              <div className="text-container max-w-[42vw] gap-[20px] pl-[2vw] md:max-w-[300px]">
                 <div className="flex flex-col items-start leading-[0.9]">
                   <div className="flex border-b border-b-[#9cd4e6] pb-[1.5vw] md:pb-[10px]">
                     <span className="mx-[1vw] text-[10vw] font-extralight leading-[0.9] md:text-[60px]">
                       03
                     </span>
                     <h2 className="font-crimson text-[5vw] md:text-[30px]">
-                      The Art of Espresso
+                      Grounded in Greatness
                     </h2>
                   </div>
-                  <p className="font-crimson my-[20px] ml-[12vw] text-[2vw] leading-[1.2] text-white md:ml-0 md:text-[16px]">
-                    Discover how Italy became a world-renowned coffee hub.
+                  <p className="font-crimson my-[20px] ml-[14vw] text-[2vw] leading-[1.2] text-white md:ml-0 md:text-[16px]">
+                    Rooted in simplicity. Driven by taste.
                   </p>
-                  <p className="ml-[12vw] text-[1vw] leading-[1.4] text-white md:ml-0 md:text-[14px]">
-                    Italy's love for coffee dates back centuries, making it a
-                    coffee epicenter. From the first sip of espresso to the
-                    last, Italy's coffee culture is unrivaled.
+                  <p className="ml-[14vw] text-[1vw] leading-[1.4] text-white md:ml-0 md:text-[14px]">
+                    From the first grind to the last sip, it's all about getting
+                    back to basics. Just coffee at its finest, doing what it
+                    does best.
                   </p>
                 </div>
               </div>
