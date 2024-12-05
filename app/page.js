@@ -35,9 +35,9 @@ export default function Home() {
         <Experience backgroundColor={backgroundColor} />
       </Suspense>
       <Section1 />
-      <section className="transitionSection relative z-[3] h-[200vh]"></section>
-      <Section2 />
 
+      <Section2 />
+      <section className="transitionSection relative z-[3] h-[100vh]"></section>
       <Section3 />
       <section className="transitionSection relative z-[3] h-[200vh]"></section>
       <section className="transitionSection relative z-[3] h-[200vh]"></section>

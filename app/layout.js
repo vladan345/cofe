@@ -8,7 +8,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${inter.variable} ${crimson.variable}`}>
       <body>
-        <ReactLenis root options={{ lerp: 0.15 }}>
+        <ReactLenis root options={{ duration: 3, wheelMultiplier: 1.5 }}>
           {children}
         </ReactLenis>
       </body>

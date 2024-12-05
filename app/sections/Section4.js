@@ -79,10 +79,10 @@ export default function Section4() {
       <div className="trigger h-full w-full">
         <div className="sticky left-0 top-0 flex h-screen w-full flex-col items-center justify-center">
           <h1 className="coffeeText1 absolute left-1/2 top-1/2 z-[0] -translate-x-1/2 -translate-y-1/2 scale-[0.8] text-center font-[Arial] text-[12vw] font-semibold leading-[1] tracking-[0.05em] blur-[20px]">
-            UN ITALIANO VERO
+            CLARITY BEGINS HERE
           </h1>
           <h1 className="coffeeText2 absolute left-1/2 top-1/2 z-[0] -translate-x-1/2 -translate-y-1/2 scale-[0.8] text-center font-[Arial] text-[12vw] font-semibold leading-[1] tracking-[0.05em]">
-            UN ITALIANO VERO
+            CLARITY BEGINS HERE
           </h1>
 
           <Image
@@ -93,7 +93,7 @@ export default function Section4() {
             className="cup absolute left-1/2 top-[100%] z-[1] max-w-[600px] -translate-x-1/2 md:max-w-[300px]"
           />
           <h1 className="coffeeText3 text-stroke absolute left-1/2 top-1/2 z-[2] -translate-x-1/2 -translate-y-1/2 scale-[0.8] text-center font-[Arial] text-[12vw] font-semibold leading-[1] tracking-[0.05em] text-transparent">
-            UN ITALIANO VERO
+            CLARITY BEGINS HERE
           </h1>
         </div>
       </div>

@@ -30,7 +30,7 @@ export default function Section2() {
     { scope: main },
   );
   return (
-    <section ref={main} className="relative z-[2] h-[700vh] w-full">
+    <section ref={main} className="relative z-[2] h-[500vh] w-full">
       <div className="wrapper h-full w-full">
         <div className="sticky left-0 top-0 h-screen w-full">
           <div className="panel spacer absolute left-0 top-0 h-screen w-full"></div>
@@ -47,7 +47,7 @@ export default function Section2() {
                       Brewed to the point.
                     </h2>
                   </div>
-                  <p className="font-crimson my-[20px] ml-[12vw] text-[2vw] leading-[1.2] text-white md:ml-0 md:text-[16px]">
+                  <p className="my-[20px] ml-[12vw] font-crimson text-[2vw] leading-[1.2] text-white md:ml-0 md:text-[16px]">
                     Simple. Bold. No fluff.
                   </p>
                   <p className="ml-[12vw] text-[1vw] leading-[1.4] text-white md:ml-0 md:text-[14px]">
@@ -70,7 +70,7 @@ export default function Section2() {
                       Dark roast for brighter mornings.
                     </h2>
                   </div>
-                  <p className="font-crimson my-[20px] ml-[13.5vw] text-[2vw] leading-[1.2] text-white md:ml-0 md:text-[16px]">
+                  <p className="my-[20px] ml-[13.5vw] font-crimson text-[2vw] leading-[1.2] text-white md:ml-0 md:text-[16px]">
                     Less noise, more flavor.
                   </p>
                   <p className="ml-[13.5vw] text-[1vw] leading-[1.4] text-white md:ml-0 md:text-[14px]">
@@ -94,7 +94,7 @@ export default function Section2() {
                       Grounded in Greatness
                     </h2>
                   </div>
-                  <p className="font-crimson my-[20px] ml-[14vw] text-[2vw] leading-[1.2] text-white md:ml-0 md:text-[16px]">
+                  <p className="my-[20px] ml-[14vw] font-crimson text-[2vw] leading-[1.2] text-white md:ml-0 md:text-[16px]">
                     Rooted in simplicity. Driven by taste.
                   </p>
                   <p className="ml-[14vw] text-[1vw] leading-[1.4] text-white md:ml-0 md:text-[14px]">
